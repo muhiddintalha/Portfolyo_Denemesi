@@ -5,12 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Buraya sayfanın başlığını yazcam yani sekmenin üstüne gelince yazacak yeri-->
 <title>Muhiddin Talha Yılmaz Portfolyo</title>
+
+<!-- CSS dosyamı bağlıyorum, tüm tasarımları oraya ekleyeceğim-->
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
 <!--Burayı ana başlık gibi kullancam büyük ihtimalle adımı yazarım-->
-<h1>Buraya ismimi yazabilirim</h1>
-<!--Buranın altına yazdıklarım menü şeklinde olcak şimdilik böyle gözüküyor-->
+<h1>Muhiddin Talha Yılmaz</h1>
+<!--Burası menü kısmı, basınca sayfadaki bölümlere otomatik olarak geçiyor-->
 <nav>
 <ul>
 <li><a href="#hero">Ana Sayfa</a></li>
@@ -25,20 +28,85 @@
 <!--Buraya ekleyeceklerim genel olarak site içeriğini oluşturacak-->
 <main>
     <!-- Burası gieiş bölümü olcak-->
-<section id="hero" ><img src="Assets/İmg/webtasarımıgörseli.jpg" alt="Ana Görsel" width="300"></section>
-<!--Burası hakkımda bölümü olacak-->
-<section id="about"></section>
-<!--Buraya yeteneklerimi yazcam-->
-<section id="skills"></section>
-<!--Buraya porfolyo tarzı bir yer yaparım ya da yapmak istediğim projeleri eklerim-->
-<section id="portfolio"></section>
-<!--Burası iletişim yeri olcak e posta numara gibi-->
-<section id="contact"></section>
+<section id="hero" ><img src="assets/img/webgorseli.jpg" alt="Ana Görsel" width="300">
+<h1>Merhaba, Ben Talha</h1>
+<p>Bilgi Güvenliği Teknolojisi öğrencisiyim</p>
+</section>
+
+<!--Kendimi daha detaylı anlattığım hakkımda bölümü-->
+<section id="about">
+
+     <h2>Hakkımda</h2>
+     <p>Merhaba, ben Muhiddin Talha Yılmaz. Kapadokya Üniversitesi Bilgi Güvenliği Teknolojisi 2.sınıf öğrencisiyim. Siber güvenlik dünyasında yetkinlik kazanmak için temel ağ bilgisi, şifreleme yöntemleri ve web teknolojileri üzerine çalışıyorum.
+
+     </p>
+     <p>Sadece teorik bilgiyle yetinmeyip, öğrendiklerimi projelere dönüştürmeyi ve disiplinli bir çalışma sistemiyle sürekli gelişmeye çalışıyorum. Hedefim, dijital dünyada güvenli ve sürdürülebilir sistemler inşa eden bir uzman olmak.
+     </p>
+</section>
+
+<!--Burada teknik yeteneklerimi liste olarak gösterdim-->
+<section id="skills">
+ <h2>Yeteneklerim</h2>
+ <ul>
+    <li>HTML & Semantik Yapı</li>
+    <li>CSS3 & Responsive Tasarım</li>
+    <li>Finansal Analiz & Risk Yönetimi</li>
+    <li>Git & Github Sürüm Kontrolü</li>
+ </ul>
+</section>
+
+<!--Projelerimi göstermeyi düşündüğüm taslak portfolyo bölümü-->
+<section id="portfolio">
+    <h2>Projelerim</h2>
+
+    <div class="project-container">
+<!-- Her proje için article yapısı kullanıyırum-->
+        <article class="card">
+            <img src="assets/img/webgorseli.jpg" alt="Vize kampı projesi" width="300">
+            <h3>Vize çalışma kampı</h3>
+            <p>Kişisel disiplin, zaman yönetimi ve akademik başarı takip sistemi.</p>
+        </article>
+        <!-- Buraya görsel örnekleri eklencek-->
+        <article class="card">
+            <img src="assets/img/webgorseli.jpg" alt="Web portfolypsu" width="300">
+  <h3>Kişisel Web Portfolyosu</h3><p>HTML5 ve CSS3 kullanrak geliştirilen, mobil uyumlu tanıtım sitesi</p>
+        </article>
+    </div>
+
+
+</section>
+<!-- Ziyaretçilerle iletişim kurmak için yaptığım form bölümü-->
+<section id="contact">
+    <h2>İletişim</h2>
+    
+<!--İsim, E-posta, ve mesajları takep eden basit bir iletişim formu -->
+    <form id="contactForm">
+        <label for="name">Adınız Soyadınız:</label>
+        <input type="text" id="name" placeholder="Adınız Soyadınız" required>
+
+        <label for="email">E-posta adresiniz:</label>
+        <input type="email" id="email" placeholder="ornek@email.com" required>
+
+        <label for="message">Mesajınız:</label>
+        <textarea id="message" rows="5" placeholder="Mesajınızı Buraya Yazınız..." required></textarea>
+        
+        <button type="submit">Gönder</button>
+    </form>
+
+<p id="formFeedback"></p> 
+</section>
 
 </main>
-<!-- Burası en altta gözüken alt bilgi yeri-->
+<!-- Sayfanın en alt kısmı, Haklar burda belirttim-->
 <footer>
-<p>© 2025 Tüm hakları saklıdır.</p>
+<p>© 2025 Muhiddin Talha Yılmaz | Tüm hakları saklıdır.</p>
+<nav class="socials">
+    <a href="#">Github</a> | <a href="#">LinkedIn</a>
+</nav>
 </footer>
+
+<!-- Js dosyasını bağlıyorum-->
+ <script src="script.js"></script>
+
 </body>
 </html>
