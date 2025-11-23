@@ -1,0 +1,131 @@
+/* 1. TEMİZLİK VE GENEL AYARLAR */
+* {
+    margin: 0;      /* Dış boşlukları sıfırla (Yapışık olsun) */
+    padding: 0;     /* İç boşlukları sıfırla */
+    box-sizing: border-box; /* Kutuların boyutu şaşmasın (Çok önemli!) */
+    font-family: 'Segoe UI', sans-serif; /* Yazı tipini modern yap */
+}
+
+html {
+    scroll-behavior: smooth; /* Linke basınca kayarak gitsin */
+}
+
+body {
+    background-color: #f4f4f4; /* Arka planı hafif gri yap (Göz yormaz) */
+    color: #333;    /* Yazıları tam siyah değil, koyu gri yap (Okunaklı olur) */
+    line-height: 1.6; /* Satır aralarını biraz aç, sıkışık durmasın */
+}
+
+/* Linklerin altındaki o çirkin çizgiyi kaldır */
+a {
+    text-decoration: none; 
+    color: inherit; /* Rengini babasından (üst elementten) al */
+}
+
+/* Listelerin başındaki noktaları (•) kaldır */
+ul {
+    list-style: none;
+}
+
+/* ========================
+   2. MENÜ TASARIMI (HEADER)
+   ======================== */
+header {
+    background-color: #1a1a1a;  /* Simsiyah değil, havalı koyu gri */
+    color: white;               /* Yazılar beyaz olsun */
+    
+    /* İŞTE SİHİR BURADA (FLEXBOX) */
+    display: flex;              /* "İçindekileri yan yana diz" komutu */
+    justify-content: space-between; /* "Biri en sola, biri en sağa gitsin" */
+    align-items: center;        /* "Dikey olarak ortala" */
+    
+    padding: 15px 50px;         /* Kenarlardan boşluk ver (Rahatlasın) */
+    
+    /* Menü tepeye yapışsın */
+    position: sticky;
+    top: 0;
+    z-index: 1000;              /* Her şeyin üstünde dursun */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Altına hafif gölge at */
+}
+
+/* Sol taraftaki İsim (Logo) */
+header h1 {
+    font-size: 1.4rem;          /* Yazıyı biraz büyüt */
+    letter-spacing: 1px;        /* Harflerin arasını azıcık aç */
+}
+
+/* Sağ taraftaki Linkler */
+nav ul {
+    display: flex;              /* Linkleri de yan yana diz */
+    gap: 20px;                  /* Linklerin arasına 20px boşluk koy */
+}
+
+/* Linklerin Kendisi */
+nav a {
+    font-weight: 500;           /* Yazıyı biraz kalınlaştır */
+    transition: color 0.3s;     /* Renk değişimi yumuşak olsun (Animasyon) */
+}
+
+/* Üstüne Gelince (Hover) */
+nav a:hover {
+    color: #00bcd4;             /* Üstüne gelince Turkuaz olsun */
+}
+
+/* ========================
+   3. GİRİŞ ALANI (HERO)
+   ======================== */
+#hero {
+    height: 90vh; /* Ekranın %90'ını kapla */
+    
+    /* Havalı Siber Güvenlik Gradyanı (Koyu Mavi - Gri) */
+    background: linear-gradient(135deg, #1c1c1c, #2c3e50);
+    color: white; /* Yazılar beyaz olsun ki okunsun */
+    
+    /* MERKEZLEME SİHİRBAZI (Yine Flexbox) */
+    display: flex;
+    flex-direction: column; /* Alt alta diz (Resim üstte, yazı altta) */
+    justify-content: center; /* Dikeyde ortala */
+    align-items: center;    /* Yatayda ortala */
+    text-align: center;     /* Metinleri ortala */
+}
+
+/* Profil/Kapak Resmi */
+#hero img {
+    border-radius: 50%; /* Resmi yuvarlak yap */
+    border: 4px solid #00bcd4; /* Etrafına turkuaz çerçeve at */
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.5); /* Neon parlaması efekti */
+    margin-bottom: 20px; /* Yazıyla arasına boşluk koy */
+    object-fit: cover; /* Resim bozulmasın */
+    width: 150px; /* (EKLEME) Resim çok devasa olmasın diye bir boyut sınırı koydum */
+    height: 150px;
+}
+
+/* "Merhaba Ben Talha" Yazısı */
+#hero h1 {
+    font-size: 2.5rem; /* Kocaman yap */
+    margin-bottom: 10px;
+}
+
+/* Altındaki Unvan Yazısı */
+#hero p {
+    font-size: 1.2rem;
+    color: #bdc3c7; /* Hafif gri (Gümüş) */
+    max-width: 600px; /* Çok yayılmasın */
+}
+
+/* ========================
+   4. DİĞER BÖLÜMLER (GENEL)
+   (Sen istemedin ama sayfanın altı boş kalmasın diye 
+    standart bir ayar ekledim, html'deki section'lar düzgün dursun)
+   ======================== */
+section {
+    padding: 60px 20px; /* Her bölümün içinden boşluk ver */
+    max-width: 1100px;  /* İçerik çok yayılmasın */
+    margin: 0 auto;     /* Ortala */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
