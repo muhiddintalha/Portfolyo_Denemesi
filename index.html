@@ -8,14 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+    <!-- Burası sayfanın başlığı yani sekmenin üstüne gelince yazacak yeri-->
     <title>Muhiddin Talha Yılmaz Portfolyo</title>
+    <!-- CSS dosyamı bağlıyorum, tüm tasarımları oraya ekleyeceğim-->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <header>
+        <!--Sayfanın Ana başlığı-->
         <h1>Muhiddin Talha Yılmaz</h1>
+        <!--Burası menü kısmı, basınca sayfadaki bölümlere otomatik olarak geçiyor-->
         <nav>
             <ul>
                 <li><a href="#hero">Ana Sayfa</a></li>
@@ -26,32 +30,42 @@
             </ul>
         </nav>
     </header>
-
+   <!--Buraya ekleyeceklerim genel olarak site içeriğini oluşturacak-->
     <main>
-        
+        <!-- Burası giriş bölümü olcak-->
         <section id="hero">
-            <img src="assets/img/webgorseli.jpg" alt="Ana Görsel">
-            <h1>Merhaba, Ben Talha</h1>
-            <p>Bilgi Güvenliği Teknolojisi öğrencisiyim</p>
+            <img src="assets/img/ninja.jpg" alt="Ana Görsel">
+            <h1>Muhiddin Talha Yılmaz</h1>
+            <p>Bilgi Güvenliği Teknolojisi Öğrencisi</p>
         </section>
 
         <div class="parallax-separator" id="parallax-1"></div>
-
+        <!--Kendimi daha detaylı anlattığım hakkımda bölümü-->
         <section id="about">
             <div class="container">
                 <h2>Hakkımda</h2>
-                <p>
-                    Merhaba, ben <strong>Muhiddin Talha Yılmaz</strong>. Kapadokya Üniversitesi Bilgi Güvenliği Teknolojisi 2. sınıf öğrencisiyim. 
-                    Siber güvenlik dünyasında yetkinlik kazanmak için temel ağ bilgisi, şifreleme yöntemleri ve web teknolojileri üzerine çalışıyorum.
-                </p>
-                <p>
-                    Sadece teorik bilgiyle yetinmeyip, öğrendiklerimi projelere dönüştürmeyi ve disiplinli bir çalışma sistemiyle sürekli gelişmeye çalışıyorum.
-                </p>
+                
+                <article class="about-content-box">
+                    <p>
+                        Merhaba! Ben <strong>Muhiddin Talha Yılmaz</strong>. Kapadokya Üniversitesi Bilgi Güvenliği Teknolojisi programında, dijital dünyanın savunma hatlarını ve mimarisini öğrenen tutkulu bir 2. sınıf öğrencisiyim. Teknolojiyi sadece tüketmeyi değil, <strong>arka plandaki algoritmaları, güvenlik protokollerini ve sistem mimarilerini</strong> çözümlemeyi seviyorum.
+                    </p>
+                    <br>
+                    <p>
+                        Kariyer yolculuğumda <strong>"T Şeklinde İnsan" (T-Shaped)</strong> modelini benimsiyorum. Bir yandan <strong>Siber Güvenlik, Ağ Yönetimi ve Kriptografi</strong> alanlarında teknik derinlik kazanırken; diğer yandan <strong>Web Geliştirme, Proje Yönetimi ve Dijital Pazarlama</strong> gibi alanlarda yetkinlik geliştirerek olaylara çok boyutlu bakmayı hedefliyorum.
+                    </p>
+                    <br>
+                    <p>
+                        Benim için öğrenmek, bitmeyen bir süreçtir. Python ile otomasyon araçları yazmaktan, modern web arayüzleri tasarlamaya kadar geniş bir yelpazede projeler üretiyorum. Hedefim; sadece kod yazan değil, <strong>güvenli, sürdürülebilir ve kullanıcı odaklı sistemler inşa eden</strong> yetkin bir uzman olmak.
+                    </p>
+                    
+                    <a href="#contact" class="btn-primary">İletişime Geç</a>
+                </article>
             </div>
         </section>
 
         <div class="parallax-separator" id="parallax-2"></div>
-
+ 
+        <!--Burada teknik yeteneklerimi liste olarak gösterdim-->
         <section id="skills">
             <div class="container">
                 <h2>Yeteneklerim</h2>
@@ -61,29 +75,69 @@
                     <li class="skill">Siber Güvenlik 🔒</li>
                     <li class="skill">Git & Github 🐙</li>
                     <li class="skill">Python 🐍</li>
+                    <li class="skill">Kriptografi 🔑</li>
+                    <li class="skill">Ağ Güvenliği & Protokoller 🌐</li>
+                    <li class="skill">Linux & Terminal 🐧</li>
+                    <li class="skill">VS Code & Uzantılar 💻</li>
+                    <li class="skill">SQL & Veritabanı 🗄️</li>
+                    <li class="skill">Sızma Testi (Pentest) 🕵️‍♂️</li>
                 </ul>
             </div>
         </section>
 
-
+       <!--Projelerimi gösterdiğim portfolyo bölümü-->
         <section id="portfolio">
             <h2>Projelerim</h2>
             <div class="project-container">
                 <article class="card">
-                    <img src="assets/img/webgorseli.jpg" alt="Proje 1">
-                    <h3>Vize Çalışma Kampı</h3>
-                    <p>Akademik başarı takip sistemi.</p>
+                    <img src="assets/img/bal.jpg" alt="Honeypot (Bal Küpü) Sistemi">
+                    <h3>Honeypot (Bal Küpü) Sistemi</h3>
+                    <p>Saldırganları yanıltmak ve saldırı metodolojilerini analiz etmek amacıyla, 
+                        sahte zafiyetler barındıran ve tüm erişim loglarını kaydeden bir tuzak sunucu simülatörü</p>
                 </article>
                 <article class="card">
-                    <img src="assets/img/webgorseli.jpg" alt="Proje 2">
+                    <img src="assets/img/site.jpg" alt="Kişisel Web Portfolyosu">
                     <h3>Kişisel Web Portfolyosu</h3>
-                    <p>HTML5 ve CSS3 ile geliştirilen tanıtım sitesi.</p>
+                    <p>HTML5, CSS3 ve JavaScript kullanılarak geliştirilen; Flexbox altyapısına sahip, Paralaks efektli ve mobil uyumlu (Responsive) kişisel tanıtım sitesi.</p>
+                </article>
+                 <article class="card">
+                    <img src="assets/img/sifre.jpg" alt="Python Şifreleme Aracı">
+                    <h3>Python Şifreleme Aracı</h3>
+                    <p>Python ile geliştirilen, metinleri Sezar (Caesar) ve AES algoritmalarıyla şifreleyip çözen (Encrypt/Decrypt) masaüstü kriptografi uygulaması.</p>
+                </article>
+                 <article class="card">
+                    <img src="assets/img/ard.jpg" alt="Ağ Port Tarayıcı (Port Scanner)">
+                    <h3>Ağ Port Tarayıcı (Port Scanner)</h3>
+                    <p>Socket kütüphanesi kullanılarak hedef IP adresindeki açık portları tespit eden ve olası güvenlik açıklarını analiz eden Python tabanlı ağ aracı.</p>
+                </article>
+                 <article class="card">
+                    <img src="assets/img/sifre2.jpg" alt="Parola Güvenlik Analizörü">
+                    <h3>Parola Güvenlik Analizörü</h3>
+                    <p>Kullanıcı şifrelerinin karmaşıklığını (Entropy) ölçen, zayıf şifreleri tespit eden ve Brute-Force saldırılarına karşı dayanıklılığı test eden güvenlik scripti.</p>
+                </article>
+                 <article class="card">
+                    <img src="assets/img/laptop.jpg" alt="Dosya Bütünlük Kontrolcüsü">
+                    <h3>Dosya Bütünlük Kontrolcüsü</h3>
+                    <p>Önemli dosyaların SHA-256 hash değerlerini hesaplayarak, dosya üzerinde yetkisiz bir değişiklik yapılıp yapılmadığını kontrol eden "Blue Team" odaklı bütünlük aracı.</p>
+                </article>
+                <article class="card">
+                    <img src="assets/img/steno.jpg" 
+                    alt="Görsel Steganografi Uygulaması">i
+                    <h3>Görsel Steganografi Uygulaması</h3>
+                    <p>Gizli metin mesajlarını bir resim dosyasının (PNG/JPG) içine gizleyen ve gerektiğinde tekrar ayrıştıran veri gizleme yazılımı.</p>
+                </article>
+                <article class="card">
+                    <img src="assets/img/pc.jpg" alt="SQL Injection Tespit Botu">
+                    <h3>SQL Injection Tespit Botu</h3>
+                    <p>Web sitelerindeki giriş formlarını (Input) tarayarak basit SQL Injection zafiyetlerini tespit eden ve raporlayan eğitim amaçlı otomasyon aracı.</p>
                 </article>
             </div>
         </section>
 
+        <!-- Ziyaretçilerle iletişim kurmak için yaptığım form bölümü-->
         <section id="contact">
             <h2>İletişim</h2>
+            <!--İsim, E-posta, ve mesajları takep eden basit bir iletişim formu -->
             <form id="contactForm">
                 <label for="name">Adınız Soyadınız:</label>
                 <input type="text" id="name" required>
@@ -94,17 +148,12 @@
                 <button type="submit">Gönder</button>
             </form>
             <p id="formFeedback"></p> 
-        </section>
-
-    
-</form>
-
-<p id="formFeedback"></p> 
-
+        
+<!--Buraya Okulun Konumunu Harita Bölümüne Ekledim-->
 <div class="map-container">
     <h3>Konumum</h3>
     <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d3118.8227677898817!2d34.89789873794125!3d38.58392897698482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e2!4m3!3m2!1d38.585732199999995!2d34.9002717!4m3!3m2!1d38.5856132!2d34.9004544!5e0!3m2!1str!2str!4v1764164567721!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1801.6671622053395!2d34.89895437297245!3d38.58404699813461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152a42562df0b47b%3A0xbe891733c168c00d!2sKapadokya%20%C3%9Cniversitesi%20(Mustafapa%C5%9Fa%20Yerle%C5%9Fkesi)!5e0!3m2!1str!2str!4v1764168705499!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
         allowfullscreen="" 
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade">
@@ -113,11 +162,10 @@
 
 </section>
     </main>
-
     <footer>
     <div class="container">
         <p>© 2025 Muhiddin Talha Yılmaz</p>
-        
+        <!--Buraya Github ve LinkedIn hesaplarımı ekledim-->
         <div class="socials">
             <a href="https://github.com/muhiddintalha" target="_blank" title="GitHub">
                 <i class="fab fa-github"></i>
