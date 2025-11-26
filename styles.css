@@ -1,131 +1,288 @@
-/* 1. TEMİZLİK VE GENEL AYARLAR */
+/* ========================
+   1. GENEL AYARLAR (GLOBAL)
+   ======================== */
 * {
-    margin: 0;      /* Dış boşlukları sıfırla (Yapışık olsun) */
-    padding: 0;     /* İç boşlukları sıfırla */
-    box-sizing: border-box; /* Kutuların boyutu şaşmasın (Çok önemli!) */
-    font-family: 'Segoe UI', sans-serif; /* Yazı tipini modern yap */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 html {
-    scroll-behavior: smooth; /* Linke basınca kayarak gitsin */
+    scroll-behavior: smooth;
 }
 
+/* SİYAH ŞERİTLERİN SIRRI BURADA */
 body {
-    background-color: #f4f4f4; /* Arka planı hafif gri yap (Göz yormaz) */
-    color: #333;    /* Yazıları tam siyah değil, koyu gri yap (Okunaklı olur) */
-    line-height: 1.6; /* Satır aralarını biraz aç, sıkışık durmasın */
+    background-color: #000; /* Arka planı komple KOYU yapıyoruz */
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Linklerin altındaki o çirkin çizgiyi kaldır */
+/* Tüm içeriği ortada toplayan ana kutu */
+main {
+    max-width: 1200px;       /* İçerik 1200px'i geçmesin */
+    margin: 0 auto;          /* Ortala (Sağ ve sol boşluklar siyah kalır) */
+    background-color: #ffffff; /* İçerik alanı BEYAZ olsun */
+    min-height: 100vh;       /* Sayfa boydan boya uzasın */
+    box-shadow: 0 0 50px rgba(0,0,0,0.5); /* Ortadaki kağıda gölge ver */
+}
+
+/* Linkler */
 a {
-    text-decoration: none; 
-    color: inherit; /* Rengini babasından (üst elementten) al */
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Listelerin başındaki noktaları (•) kaldır */
 ul {
     list-style: none;
 }
 
+/* Genel Container (İçerik kenara yapışmasın diye) */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* ========================
-   2. MENÜ TASARIMI (HEADER)
+   2. MENÜ (HEADER)
    ======================== */
 header {
-    background-color: #1a1a1a;  /* Simsiyah değil, havalı koyu gri */
-    color: white;               /* Yazılar beyaz olsun */
+    background-color: #000000; /* Menü koyu olsun */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
     
-    /* İŞTE SİHİR BURADA (FLEXBOX) */
-    display: flex;              /* "İçindekileri yan yana diz" komutu */
-    justify-content: space-between; /* "Biri en sola, biri en sağa gitsin" */
-    align-items: center;        /* "Dikey olarak ortala" */
+    /* Menü de sayfayla birlikte ortalansın */
+    max-width: 1200px;
+    margin: 0 auto;
     
-    padding: 15px 50px;         /* Kenarlardan boşluk ver (Rahatlasın) */
-    
-    /* Menü tepeye yapışsın */
     position: sticky;
     top: 0;
-    z-index: 1000;              /* Her şeyin üstünde dursun */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Altına hafif gölge at */
+    z-index: 1000;
+    border-bottom: 1px solid #333;
 }
 
-/* Sol taraftaki İsim (Logo) */
 header h1 {
-    font-size: 1.4rem;          /* Yazıyı biraz büyüt */
-    letter-spacing: 1px;        /* Harflerin arasını azıcık aç */
+    font-size: 1.4rem;
+    letter-spacing: 1px;
 }
 
-/* Sağ taraftaki Linkler */
 nav ul {
-    display: flex;              /* Linkleri de yan yana diz */
-    gap: 20px;                  /* Linklerin arasına 20px boşluk koy */
+    display: flex;
+    gap: 20px;
 }
 
-/* Linklerin Kendisi */
 nav a {
-    font-weight: 500;           /* Yazıyı biraz kalınlaştır */
-    transition: color 0.3s;     /* Renk değişimi yumuşak olsun (Animasyon) */
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-/* Üstüne Gelince (Hover) */
 nav a:hover {
-    color: #00bcd4;             /* Üstüne gelince Turkuaz olsun */
+    color: #00bcd4;
 }
 
 /* ========================
    3. GİRİŞ ALANI (HERO)
    ======================== */
 #hero {
-    height: 90vh; /* Ekranın %90'ını kapla */
-    
-    /* Havalı Siber Güvenlik Gradyanı (Koyu Mavi - Gri) */
+    height: 80vh; /* Yüksekliği biraz kıstım */
     background: linear-gradient(135deg, #1c1c1c, #2c3e50);
-    color: white; /* Yazılar beyaz olsun ki okunsun */
-    
-    /* MERKEZLEME SİHİRBAZI (Yine Flexbox) */
+    color: white;
     display: flex;
-    flex-direction: column; /* Alt alta diz (Resim üstte, yazı altta) */
-    justify-content: center; /* Dikeyde ortala */
-    align-items: center;    /* Yatayda ortala */
-    text-align: center;     /* Metinleri ortala */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Profil/Kapak Resmi */
 #hero img {
-    border-radius: 50%; /* Resmi yuvarlak yap */
-    border: 4px solid #00bcd4; /* Etrafına turkuaz çerçeve at */
-    box-shadow: 0 0 20px rgba(0, 188, 212, 0.5); /* Neon parlaması efekti */
-    margin-bottom: 20px; /* Yazıyla arasına boşluk koy */
-    object-fit: cover; /* Resim bozulmasın */
-    width: 150px; /* (EKLEME) Resim çok devasa olmasın diye bir boyut sınırı koydum */
+    border-radius: 50%;
+    border: 4px solid #00bcd4;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+    margin-bottom: 20px;
+    object-fit: cover;
+    width: 150px;
     height: 150px;
 }
 
-/* "Merhaba Ben Talha" Yazısı */
 #hero h1 {
-    font-size: 2.5rem; /* Kocaman yap */
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
-/* Altındaki Unvan Yazısı */
 #hero p {
     font-size: 1.2rem;
-    color: #bdc3c7; /* Hafif gri (Gümüş) */
-    max-width: 600px; /* Çok yayılmasın */
+    color: #bdc3c7;
+    max-width: 600px;
 }
 
 /* ========================
-   4. DİĞER BÖLÜMLER (GENEL)
-   (Sen istemedin ama sayfanın altı boş kalmasın diye 
-    standart bir ayar ekledim, html'deki section'lar düzgün dursun)
+   4. HAKKIMDA (YAZI)
    ======================== */
-section {
-    padding: 60px 20px; /* Her bölümün içinden boşluk ver */
-    max-width: 1100px;  /* İçerik çok yayılmasın */
-    margin: 0 auto;     /* Ortala */
+#about {
+    background-color: #fff;
+    padding: 60px 0;
 }
 
-h2 {
+#about h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: #1a1a1a;
+    color: #2c3e50;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* ========================
+   5. YETENEKLER (KUTUCUKLAR)
+   ======================== */
+#skills {
+    padding: 40px 20px;
+    background-color: #f4f4f4; /* Hafif gri zemin */
+}
+
+#skills h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.skills-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+}
+
+.skill {
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: default;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    background-color: #00bcd4;
+}
+
+/* ========================
+   6. PROJELER (KARTLAR)
+   ======================== */
+#portfolio {
+    padding: 60px 20px;
+}
+
+#portfolio h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 300px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin-top: 15px;
+    color: #2c3e50;
+}
+
+/* ========================
+   7. İLETİŞİM (CONTACT)
+   ======================== */
+#contact {
+    background-color: #f9f9f9;
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, 
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+form button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background-color: #00bcd4;
+}
+
+/* ========================
+   8. FOOTER
+   ======================== */
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #00bcd4;
+    font-weight: bold;
 }
