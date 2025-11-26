@@ -5,92 +5,70 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-/* SİYAH ŞERİTLERİN SIRRI BURADA */
+/* SİYAH ŞERİTLER İÇİN ARKA PLAN */
 body {
-    background-color: #000; /* Arka planı komple KOYU yapıyoruz */
-    color: #333;
+    background-color: #000000; /* ZİFİRİ SİYAH */
+    color: #000000;
     line-height: 1.6;
 }
 
 /* Tüm içeriği ortada toplayan ana kutu */
 main {
     max-width: 1200px;       /* İçerik 1200px'i geçmesin */
-    margin: 0 auto;          /* Ortala (Sağ ve sol boşluklar siyah kalır) */
-    background-color: #ffffff; /* İçerik alanı BEYAZ olsun */
-    min-height: 100vh;       /* Sayfa boydan boya uzasın */
-    box-shadow: 0 0 50px rgba(0,0,0,0.5); /* Ortadaki kağıda gölge ver */
+    margin: 0 auto;          /* Ortala */
+    background-color:#000000; /* İçerik alanı BEYAZ */
+    min-height: 100vh;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5); /* Ortadaki kağıda gölge */
+    position: relative;      /* Z-index sorunlarını çözer */
+    z-index: 10;             /* İçerik resimlerin üstünde dursun */
 }
 
 /* Linkler */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-}
-
-/* Genel Container (İçerik kenara yapışmasın diye) */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
 /* ========================
    2. MENÜ (HEADER)
    ======================== */
 header {
-    background-color: #000000; /* Menü koyu olsun */
+    background-color: #000000;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
-    
-    /* Menü de sayfayla birlikte ortalansın */
     max-width: 1200px;
     margin: 0 auto;
-    
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid #333;
 }
 
-header h1 {
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-}
-
-nav ul {
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #00bcd4;
-}
+header h1 { font-size: 1.4rem; letter-spacing: 1px; }
+nav ul { display: flex; gap: 20px; }
+nav a { font-weight: 500; transition: color 0.3s; }
+nav a:hover { color: #00bcd4; }
 
 /* ========================
-   3. GİRİŞ ALANI (HERO)
+   3. GİRİŞ ALANI (HERO) - HATA BURADAYDI, DÜZELDİ
    ======================== */
 #hero {
-    height: 80vh; /* Yüksekliği biraz kıstım */
-    background: linear-gradient(135deg, #1c1c1c, #2c3e50);
+    /* Arkaya görsel + Siyah Perde */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* BURASI ARTIK TEMİZ */
+    
+    height: 80vh;
     color: white;
     display: flex;
     flex-direction: column;
@@ -98,6 +76,7 @@ nav a:hover {
     align-items: center;
     text-align: center;
     padding: 20px;
+    width: 100%;
 }
 
 #hero img {
@@ -110,179 +89,107 @@ nav a:hover {
     height: 150px;
 }
 
-#hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-#hero p {
-    font-size: 1.2rem;
-    color: #bdc3c7;
-    max-width: 600px;
-}
+#hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+#hero p { font-size: 1.2rem; color: #bdc3c7; max-width: 600px; }
 
 /* ========================
-   4. HAKKIMDA (YAZI)
+   4. PARALAKS GEÇİŞLERİ (SİHİRLİ BÖLÜM)
    ======================== */
-#about {
-    background-color: #fff;
-    padding: 60px 0;
-}
-
-#about h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #2c3e50;
-}
-
-#about p {
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-    text-align: center;
-    color: #555;
-    font-size: 1.1rem;
-}
-
-/* ========================
-   5. YETENEKLER (KUTUCUKLAR)
-   ======================== */
-#skills {
-    padding: 40px 20px;
-    background-color: #f4f4f4; /* Hafif gri zemin */
-}
-
-#skills h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.skills-box {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 0;
-}
-
-.skill {
-    background-color: #2c3e50;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: 500;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s, background-color 0.3s;
-    cursor: default;
-}
-
-.skill:hover {
-    transform: translateY(-5px);
-    background-color: #00bcd4;
-}
-
-/* ========================
-   6. PROJELER (KARTLAR)
-   ======================== */
-#portfolio {
-    padding: 60px 20px;
-}
-
-#portfolio h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.project-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 300px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-    text-align: center;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card img {
+.parallax-separator {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px; /* Pencere yüksekliği */
     width: 100%;
-    border-radius: 8px;
-    height: 180px;
-    object-fit: cover;
+    position: relative;
+    z-index: 1; /* İçeriğin altında kalsın */
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
 }
 
+/* Resim Linkleri */
+#parallax-1 { background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop'); }
+#parallax-2 { background-image: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop'); }
+#parallax-3 { background-image: url('https://images.unsplash.com/photo-1558494949-ef2bb6ffa030?q=80&w=2070&auto=format&fit=crop'); }
+
+/* ========================
+   5. DİĞER BÖLÜMLER
+   ======================== */
+/* Hakkımda */
+#about { background-color: #000000; padding: 60px 0; position: relative; z-index: 10; 
+border-bottom: 1px solid #333;}
+#about h2 { text-align: center; margin-bottom: 30px; color: #00bcd4; }
+#about p { max-width: 800px; margin: 0 auto 20px auto; text-align: center; color: #cccccc; font-size: 1.1rem; }
+.btn-primary { display: inline-block; background-color: #00bcd4; color: #000; padding: 10px 25px; border-radius: 25px; margin-top: 10px; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; }
+.btn-primary:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
+    background-color: white;
+}
+
+/* Yetenekler */
+#skills { padding: 40px 20px; background-color: #000000; position: relative; z-index: 10; border-bottom: 1px solid #333; }
+#skills h2 { text-align: center; margin-bottom: 30px; color: #ffffff; }
+.skills-box { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; padding: 0; }
+.skill { background-color: #252525; color: #e0e0e0; padding: 12px 25px; border-radius: 25px; font-weight: 500; border: 1px solid #333 ; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); transition: transform 0.3s, background-color 0.3s, border-color 0.3s cursor: default; }
+.skill:hover { transform: translateY(-5px); background-color: #00bcd4; color: #000; border-color: #00bcd4; box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);}
+
+/* Projeler */
+#portfolio { padding: 60px 20px; background-color: #000000; position: relative; z-index: 10; }
+#portfolio h2 { text-align: center; margin-bottom: 40px; color: #ffffff; }
+.project-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+.card { background-color: #252525; border: 1px solid #333; border-radius: 10px; width: 300px; padding: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); text-align: center; transition: transform 0.3s; box-shadow: 0.3s, border-color 0.3s;}
+.card:hover { transform: translateY(-10px); border-color: #00bcd4; box-shadow: 0 0 15px rgba(0, 188, 212, 0.4); }
+.card img { width: 100%; border-radius: 8px; height: 180px; object-fit: cover;  opacity: 0.8;  transition: opacity 0.3s;}
+
+/* Karta gelince resim parlasın */
+.card:hover img {
+    opacity: 1;
+}
+
+/* Kart Başlığı */
 .card h3 {
     margin-top: 15px;
-    color: #2c3e50;
+    color: #00bcd4; /* Başlıklar Turkuaz */
+    font-size: 1.2rem;
 }
+
+/* Kart Açıklaması */
+.card p {
+    margin-top: 10px;
+    color: #cccccc; /* Yazılar Açık Gri */
+    font-size: 0.95rem;
+}
+
+/* İletişim */
+#contact { background-color: #007585; text-align: center; max-width: 600px; margin: 40px auto; padding: 30px; border-radius: 15px; position: relative; z-index: 10; }
+form input, form textarea { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; }
+form button { background-color: #2c3e50; color: white; padding: 12px 40px; border: none; border-radius: 25px; cursor: pointer; transition: background 0.3s; }
+form button:hover { background-color: #00bcd4; }
+
+/* Footer */
+footer { background-color: #000; color: white; text-align: center; padding: 20px; margin-top: 0; position: relative; z-index: 10; }
+footer a { color: #00bcd4; font-weight: bold; }
 
 /* ========================
-   7. İLETİŞİM (CONTACT)
+   HARİTA TASARIMI (DARK MODE)
    ======================== */
-#contact {
-    background-color: #f9f9f9;
-    text-align: center;
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-form label {
-    display: block;
-    text-align: left;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form input, 
-form textarea {
+.map-container {
+    margin-top: 40px; /* Form ile harita arası boşluk */
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: inherit;
 }
 
-form button {
-    background-color: #2c3e50;
-    color: white;
-    padding: 12px 40px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background 0.3s;
+.map-container h3 {
+    margin-bottom: 15px;
+    color: #ffffff; /* Başlık beyaz */
 }
 
-form button:hover {
-    background-color: #00bcd4;
-}
-
-/* ========================
-   8. FOOTER
-   ======================== */
-footer {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-footer a {
-    color: #00bcd4;
-    font-weight: bold;
+.map-container iframe {
+    width: 100%;        /* Kutuyu tam doldur */
+    height: 300px;      /* Yüksekliği */
+    border: none;       /* Kenar çizgisi olmasın */
+    border-radius: 10px; /* Köşeleri yuvarlat */
+    
+    /* İŞTE SİHİR BURADA: Haritayı Karanlık Yapıyoruz! */
+    filter: invert(90%) hue-rotate(180deg);
 }
