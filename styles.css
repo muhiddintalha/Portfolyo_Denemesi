@@ -1,3 +1,6 @@
+/*
+
+
 /* ========================
    1. GENEL AYARLAR (GLOBAL)
    ======================== */
@@ -14,7 +17,7 @@ html {
 
 /* SİYAH ŞERİTLER İÇİN ARKA PLAN */
 body {
-    background-color: #000000; /* ZİFİRİ SİYAH */
+    background-color: #000000; 
     color: #000000;
     line-height: 1.6;
 }
@@ -59,14 +62,14 @@ nav a { font-weight: 500; transition: color 0.3s; }
 nav a:hover { color: #00bcd4; }
 
 /* ========================
-   3. GİRİŞ ALANI (HERO) - HATA BURADAYDI, DÜZELDİ
+   3. GİRİŞ ALANI (HERO) -
    ======================== */
 #hero {
     /* Arkaya görsel + Siyah Perde */
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* BURASI ARTIK TEMİZ */
+    background-attachment: fixed; 
     
     height: 80vh;
     color: white;
@@ -93,7 +96,7 @@ nav a:hover { color: #00bcd4; }
 #hero p { font-size: 1.2rem; color: #bdc3c7; max-width: 600px; }
 
 /* ========================
-   4. PARALAKS GEÇİŞLERİ (SİHİRLİ BÖLÜM)
+   4. PARALAKS GEÇİŞLERİ
    ======================== */
 .parallax-separator {
     background-attachment: fixed;
@@ -167,12 +170,43 @@ form input, form textarea { width: 100%; padding: 12px; margin-bottom: 20px; bor
 form button { background-color: #2c3e50; color: white; padding: 12px 40px; border: none; border-radius: 25px; cursor: pointer; transition: background 0.3s; }
 form button:hover { background-color: #00bcd4; }
 
-/* Footer */
-footer { background-color: #000; color: white; text-align: center; padding: 20px; margin-top: 0; position: relative; z-index: 10; }
-footer a { color: #00bcd4; font-weight: bold; }
+/* ========================
+   FOOTER VE İKONLAR
+   ======================== */
+footer {
+    background-color: #000;
+    color: #888; /* Yazı rengi biraz sönük gri olsun, göz almasın */
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 0;
+    border-top: 1px solid #111; /* Üstüne ince çizgi */
+}
+
+footer p {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* İkonlar arası boşluk */
+}
+
+.socials a {
+    color: #fff;       /* İkonlar beyaz olsun */
+    font-size: 1.5rem; /* İkonları büyüt */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.socials a:hover {
+    color: #00bcd4;       /* Bizim tema rengimiz */
+    transform: scale(1.2); /* Hafif büyüsün */
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.6); /* Neon parlama */
+}
 
 /* ========================
-   HARİTA TASARIMI (DARK MODE)
+   HARİTA TASARIMI 
    ======================== */
 .map-container {
     margin-top: 40px; /* Form ile harita arası boşluk */
@@ -190,6 +224,7 @@ footer a { color: #00bcd4; font-weight: bold; }
     border: none;       /* Kenar çizgisi olmasın */
     border-radius: 10px; /* Köşeleri yuvarlat */
     
-    /* İŞTE SİHİR BURADA: Haritayı Karanlık Yapıyoruz! */
+    /* Haritayı Karanlık Yapıyoruz! */
     filter: invert(90%) hue-rotate(180deg);
 }
+
