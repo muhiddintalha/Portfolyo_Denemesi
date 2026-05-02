@@ -15,7 +15,7 @@ Bu proje, Kapadokya Üniversitesi Web Tasarımı dersi kapsamında, HTML5, CSS3 
 * **Paralaks Efektleri:** Görsel derinlik katan arka plan geçişleri.
 
 ## 🌐 Canlı Önizleme (Demo)
-Projenin çalışan haline aşağıdaki linkten ulaşabilirsiniz:
+Projenin çalışan haline linkten ulaşabilirsiniz:
 https://muhiddintalha.github.io/Portfolyo_Denemesi/
 
 ## 📂 Dosya Yapısı
