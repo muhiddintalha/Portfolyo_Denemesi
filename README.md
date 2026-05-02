@@ -16,7 +16,7 @@ Bu proje, Kapadokya Üniversitesi Web Tasarımı dersi kapsamında, HTML5, CSS3 
 
 ## 🌐 Canlı Önizleme (Demo)
 Projenin çalışan haline aşağıdaki linkten ulaşabilirsiniz:
-https://muhiddintalha.github.io/24083002-Muhiddin_Talha_Yilmaz-Kuiz/
+https://muhiddintalha.github.io/Portfolyo_Denemesi/
 
 ## 📂 Dosya Yapısı
 * `index.html`: Ana sayfa yapısı.
