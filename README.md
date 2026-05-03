@@ -1,6 +1,6 @@
 # Kişisel Dijital Portfolyo Projesi
 
-Bu proje, Kapadokya Üniversitesi Web Tasarımı dersi kapsamında, HTML5, CSS3 ve JavaScript kullanılarak geliştirilmiş responsive (mobil uyumlu) bir kişisel portfolyo sitesidir.
+Bu proje, HTML5, CSS3 ve JavaScript kullanılarak geliştirilmiş responsive (mobil uyumlu) bir kişisel portfolyo sitesidir.
 
 ## 👤 Öğrenci Bilgileri
 * **Ad Soyad:** Muhiddin Talha Yılmaz
